@@ -39,19 +39,7 @@
         <item>525</item>
         <item>525</item>
         <item>550</item>
-        <item>550</item>
-        <item>575</item>
-        <item>575</item>
-        <item>600</item>
-        <item>600</item>
-        <item>625</item>
-        <item>625</item>
-        <item>650</item>
-        <item>650</item>
-        <item>675</item>
-        <item>675</item>
-        <item>700</item>
-   </array>
+    </array>
 
    <integer-array name="config_autoBrightnessLcdBacklightValues">
         <item>6</item>
@@ -339,12 +327,6 @@
         <item>253</item>
         <item>254</item>
         <item>255</item>
-        <item>287</item>
-        <item>303</item>
-        <item>319</item>
-        <item>335</item>
-        <item>351</item>
-        <item>365</item>
     </integer-array>
     <array name="config_screenBrightnessNits">
         <item>2</item>
@@ -608,15 +590,14 @@
         <item>500</item>
         <item>525</item>
         <item>550</item>
-        <item>575</item>
     </array>
 
      <bool name="config_automatic_brightness_available">true</bool>
      <bool name="config_dozeAlwaysOnDisplayAvailable">true</bool>
      <bool name="config_supportDoubleTapWake">true</bool>
 
-     <dimen name="status_bar_height_default">100.0px</dimen>
-     <dimen name="status_bar_height_portrait">100.0px</dimen>
-     <dimen name="status_bar_height_landscape">100.0px</dimen>
+     <dimen name="status_bar_height_default">111.0px</dimen>
+     <dimen name="status_bar_height_portrait">111.0px</dimen>
+     <dimen name="status_bar_height_landscape">111.0px</dimen>
 
 </resources>
