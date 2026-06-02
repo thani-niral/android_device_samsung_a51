@@ -14,17 +14,17 @@
 # limitations under the License.
 #
 
-DEVICE_PATH := device/samsung/a51
+DEVICE_PATH := device/samsung/a50
 
 # Inherit common device configuration
 $(call inherit-product, device/samsung/universal9611-common/common.mk)
-# Inherit A51 blobs
-$(call inherit-product, vendor/samsung/a51/a51-vendor.mk)
+# Inherit A50 blobs
+$(call inherit-product, vendor/samsung/a50/a50-vendor.mk)
 
 DEVICE_PACKAGE_OVERLAYS += $(DEVICE_PATH)/overlay
 
-# Screen H/W
-TARGET_SCREEN_HEIGHT := 2400
+# Screen H/W (Aligned for Galaxy A50 19.5:9 display ratio)
+TARGET_SCREEN_HEIGHT := 2340
 TARGET_SCREEN_WIDTH := 1080
 
 # Dynamic Partitions
@@ -34,9 +34,9 @@ PRODUCT_USE_DYNAMIC_PARTITIONS := true
 PRODUCT_PACKAGES += \
     fingerprint_common.rc
 
-# Fingerprint
+# Fingerprint (A50 alignment)
 PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint-service.a51 \
+    android.hardware.biometrics.fingerprint-service.a50 \
     sensors.samsung
 
 PRODUCT_COPY_FILES += \
