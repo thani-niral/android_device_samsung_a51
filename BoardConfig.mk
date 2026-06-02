@@ -14,29 +14,29 @@
 # limitations under the License.
 #
 
-DEVICE_PATH := device/samsung/a51
+DEVICE_PATH := device/samsung/a50
 
 # Inherit from the common tree
 include device/samsung/universal9611-common/BoardConfigCommon.mk
 # Inherit optional vendor BoardConfig
--include vendor/samsung/a51/BoardConfigVendor.mk
+-include vendor/samsung/a50/BoardConfigVendor.mk
 
 # OTA Asserts
-TARGET_OTA_ASSERT_DEVICE := a51,a51dd,a51nsxx
+TARGET_OTA_ASSERT_DEVICE := a50,a50fn,a50dd,galaxya50
 TARGET_BOARD_INFO_FILE := $(DEVICE_PATH)/board-info.txt
 
 ## Releasetools
-TARGET_RECOVERY_UPDATER_LIBS := librecovery_updater_a51
+TARGET_RECOVERY_UPDATER_LIBS := librecovery_updater_a50
 TARGET_RELEASETOOLS_EXTENSIONS := $(DEVICE_PATH)/releasetools
 
-## Partitions Sizes
+## Partitions Sizes (Slightly adjusted for Exynos 9610 A50 layout)
 BOARD_BOOTIMAGE_PARTITION_SIZE := 61865984
 BOARD_DTBOIMG_PARTITION_SIZE := 8388608
-BOARD_RECOVERYIMAGE_PARTITION_SIZE := 71106560
+BOARD_RECOVERYIMAGE_PARTITION_SIZE := 67108864
 BOARD_CACHEIMAGE_PARTITION_SIZE := 209715200
 
-## Camera
-$(call soong_config_set,samsungCameraVars,extra_ids,4,20,23,50,52,54)
+## Camera (A50 specific configurations)
+$(call soong_config_set,samsungCameraVars,extra_ids,4,20)
 
 ## Vintf
 ODM_MANIFEST_SKUS := hce hceese hcesim hcesimese disabled
@@ -52,9 +52,9 @@ DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
 ## Filesystem config
 include device/samsung/universal9611-common/fsconfig_dynamic.mk
 
-# UDFPS
+# UDFPS (In-display fingerprint config alignment for A50)
 TARGET_ADDITIONAL_GRALLOC_10_USAGE_BITS := 0x2000U | 0x400000000LL
-$(call soong_config_set,surfaceflinger,udfps_lib,//$(DEVICE_PATH):libudfps_extension.a51)
+$(call soong_config_set,surfaceflinger,udfps_lib,//$(DEVICE_PATH):libudfps_extension.a50)
 
 ## SELinux
 SYSTEM_EXT_PUBLIC_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/public
